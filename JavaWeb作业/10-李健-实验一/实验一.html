@@ -1,0 +1,88 @@
+<!--
+需求：
+  1、将鼠标移到导航“影迷  影评  影票  剧本  留言”时，文字显示为蓝色。
+  2、在用户名和密码框中分别输入admin和123456时弹出恭喜你登录信息，否则提示登录失败。
+
+作者：17软件工程李健 学号：1740666110
+                                            ——2019-9-21     -->
+
+<html>
+  <head>
+    <title>实验一</title>
+    <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style>
+      .navigation{     /*设置导航栏文字 颜色 位置等属性*/
+            float:left;
+            font-size:30px;
+            font-weight:bold;
+            color:red;
+      }
+      a:hover{        /*设置a标签属性 实现鼠标焦点移至导航栏文字变蓝效果*/
+        color: blue;
+      }
+    </style>
+    <script type="text/javascript">
+      function checkLogin(){   /*获取用户名和密码 并检查获取的值是否正确*/
+        var username = document.getElementById("username").value; /*获取用户名*/
+        var password = document.getElementById("password").value; /*获取密码*/
+
+        if(username == "admin" && password == "123456"){ /*用户名与密码都正确时 弹出“恭喜你”窗口*/
+          alert("恭喜你！");
+        }
+        else {                          /*用户名或密码错误时 弹出“登录失败”弹窗 并清空输入框内容*/
+          alert("登录失败！");
+          document.getElementById("username").value = "";
+          document.getElementById("password").value = "";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div style = "width:100%;height:150px;">
+      <img src = "图片1.png" style = "width:100%;height:150px"></img>
+    </div>
+    <div style = "width:100%;height:40px;background-color:#FFD306;">
+      <div style="float:right;">
+        <div class = "navigation" ><a>影迷 &nbsp &nbsp</a></div>
+        <div class = "navigation"><a>影评 &nbsp &nbsp</a></div>
+        <div class = "navigation"><a>影票 &nbsp &nbsp</a></div>
+        <div class = "navigation"><a>剧本 &nbsp &nbsp</a></div>
+        <div class = "navigation"><a>留言 &nbsp </a></div>
+      </div>
+    </div>
+    <div style = "width:30%;height:400px;background-color:#F9F900;float:left;">
+      <div style = "text-align:center">
+        <p style = "text-align:center">欢迎您！</p>
+          <form>
+            <p>用户名：<input type = "text" id = "username" size = "15"></p>
+            <p>密 &nbsp &nbsp码：<input type = "password" id = "password" size = "15"></p>
+            <div style = "text-align:center">
+            <input type="button"  value="登录" onclick="checkLogin()" />
+            <input type="button" value="注册"  />
+            </div>
+          </form>
+        </div>
+      </div>
+    <div style = "width:70%;height:400px;background-color:#C4C400;float:right;">
+      <div style = "margin-top:50px;margin-left:30px;">
+        <p>欢迎来到奇幻电影分享站，这里你我一起分享迷人的奇幻电影。</p>
+        <li>影迷：告诉我们，你最喜欢的影星是谁，最喜欢他/她的哪张照片。</li>
+        <li>影评：开心看电影，火辣写影评。</li>
+        <li>影票：团购票、免费票，福利在此。</li>
+        <li>剧本：修改原版故事，创造你的剧本，拟补你心中的缺憾。</li>
+        <li>留言：给我们提点意见吧。</li>
+        <p >在日复一日的平淡日子里，对着已经麻木的工作，面对繁琐的家务，你或许有个掩埋在时光最底层的梦想。
+          你不知道何时就忘记了曾经充满激情的理想，你燃着火似地想去实现。在现实的重压下，你不得不低头。
+          其实我们都知道这一样我们不去触碰的，是我们最珍贵的东西。如果你真的遗失你的梦想，
+          我要告诉你，改变，从不嫌晚。为你的梦想而活吧，开启你的激情生活。
+        </p>
+      </div>
+    </div>
+    <div style = "width:100%;height:80px;background-color:#FF00FF;clear: both;">
+      <div style = "text-align:center">
+        版权声明 &nbsp | &nbsp 下载帮助 &nbsp | &nbsp 关注我们
+      </div>
+    </div>
+  </body>
+</html>
