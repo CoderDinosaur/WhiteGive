@@ -1,0 +1,88 @@
+﻿<!doctype html>
+<html><head>
+<meta charset="utf-8">
+<title>CSS控制表单样式</title>
+
+<style>
+  .setBorder {   /*设置边框属性*/
+  	position:absolute;
+  	font:1em 幼圆 bold;
+    border-radius:15px;
+  	border: 2px solid #0099CC;
+  	width:300px;
+    //left: 600px;
+  }
+
+.setInputColor{    /*设置输入框属性*/
+  border: 0.5px solid #0099CC;
+}
+
+#setLoginColor{   /*设置登录按钮颜色*/
+  background-color: #0099CC;
+}
+
+#setRegisteredColor{     /*设置注册按钮颜色*/
+  background-color:orange;
+}
+
+.div-bor{
+position: relative;width: 200px;
+}
+
+.userName{   /*用户名输入框样式*/
+position: absolute;left: 0；z-index:5;
+background-image:url(images/1.jpg);
+background-repeat: no-repeat;
+background-position: 3px 5px;
+width: 20px;
+height: 20px;
+}
+
+.psw{       /*密码输入框样式*/
+position: absolute;left: 0；z-index:5;
+background-image:url(images/2.jpg);
+background-repeat: no-repeat;
+background-position: 3px 4px;
+width: 20px;
+height: 20px;
+}
+
+#padd{   /*文字与图标增加间隔*/
+padding-left: 22px;
+}
+
+</style>
+</head>
+<body>
+  <div align="center" class = "setBorder" >
+<form action="#" method="post">
+<div class="user_login">
+<p >
+欢迎你！请登录！
+</p>
+
+
+<p>
+
+账号：
+        <i class="userName"></i>
+        <input class = "setInputColor" type="text"   name=""  value="admin" id = "padd" pattern="^[a-zA-Z][a-zA-Z0-9_]{4,15}$"  />
+
+    </p>
+    <p>
+         密码：
+         <i class="psw"></i>
+         <input class = "setInputColor" type="password" name="pwd" id = "padd" pattern="^[a-zA-Z]\w{5,17}$"/>
+    </p>
+
+    <p>
+        <input type="button" id = "setLoginColor"  value="登录"  />
+        <input type="button" id = "setRegisteredColor"  value="注册" style="margin-left:30px;" />
+   </p>
+
+</form>
+</div>
+
+
+</body>
+</html>
